@@ -1,17 +1,18 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from listings.models import Band
+from listings.models import Band, Title
 
-def hello(request):
+def hello_band(request):
     bands = Band.objects.all()
-    return HttpResponse(f"""<h1>Hello Django Unchained ! Djangooo Djangoooo</h1>
-                            <p>Our favourite bands are :<p>
-                            <ul>
-                                <li>{bands[0].name}</li>
-                                <li>{bands[1].name}</li>
-                                <li>{bands[2].name}</li>
-                            </ul>
-                        """)
+    return render(request, 
+                  'listings/hello_band.html',
+                  {'first_band':bands[0]}
+                  )
+
+def hello_title(request):
+    titles = Title.Objects.all()
+
+    return render(request, 'listings/hello_title.html')
 
 def about(request):
     return HttpResponse('<h1>About us !</h1><p>We are Django Unchained fans & sell merchandising</p>')
