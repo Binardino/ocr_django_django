@@ -6,7 +6,10 @@ def hello_band(request):
     bands = Band.objects.all()
     return render(request, 
                   'listings/hello_band.html',
-                  {'first_band':bands[0]}
+                  {'first_band':bands[0],
+                  'second_band':bands[1],
+                  'third_band':bands[2]
+                  }
                   )
 
 def hello_title(request):
