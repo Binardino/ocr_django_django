@@ -1,8 +1,19 @@
 f"""<h1>Hello Django Unchained ! Djangooo Djangoooo</h1>
+                        <p>We have {{bands|lenght}} fav bands.<p>
                         <p>Our favourite bands are :<p>
                         <ul>
                             {% for band in bands %}
                             <li>{{band.name|upper }}</li>
                             {% endor %}
                         </ul>
+                        <p>We have
+                            {% if bands|length < 5 % }
+                            few 
+                            {% elif bands|length < 10 % }
+                            some
+                            {% else % }
+                            a lot of
+                            {% endif % }
+                            fav bands
+                        <p>
                     """
