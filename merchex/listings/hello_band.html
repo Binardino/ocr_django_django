@@ -2,7 +2,7 @@ f"""<h1>Hello Django Unchained ! Djangooo Djangoooo</h1>
                         <p>Our favourite bands are :<p>
                         <ul>
                             {% for band in bands %}
-                            {{band.name}},
+                            <li>{{band.name|upper }}</li>
                             {% endor %}
                         </ul>
                     """
