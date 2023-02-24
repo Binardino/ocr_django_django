@@ -13,9 +13,9 @@ def hello_band(request):
                   )
 
 def hello_title(request):
-    titles = Title.Objects.all()
+    titles = Title.objects.all()
 
-    return render(request, 'listings/hello_title.html')
+    return render(request, 'listings/templates/hello_title.html')
 
 def about(request):
     return HttpResponse('<h1>About us !</h1><p>We are Django Unchained fans & sell merchandising</p>')
